@@ -2,13 +2,9 @@ package hello;
 
 public class Schedule {
 
-    public Schedule() {}
+    public Schedule() {
 
-    private Integer id;
-    private String firstName;
-    private String lastName;
-    private String email;
-
+    }
 
     public Schedule(Integer id, String firstName, String lastName, String email) {
         super();
@@ -18,7 +14,12 @@ public class Schedule {
         this.email = email;
     }
 
-    // Getters and setters
+    private Integer id;
+    private String firstName;
+    private String lastName;
+    private String email;
+
+    //Getters and setters
 
     @Override
     public String toString() {
@@ -31,5 +32,17 @@ public class Schedule {
 
     public Integer getId() {
         return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }

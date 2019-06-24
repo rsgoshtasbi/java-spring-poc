@@ -3,19 +3,17 @@ package hello;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Schedules {
+public class Schedules
+{
     private List<Schedule> scheduleList;
 
-    // getter method
     public List<Schedule> getScheduleList() {
         if(scheduleList == null) {
-            return new ArrayList<>();
-        } else {
-            return scheduleList;
+            scheduleList = new ArrayList<>();
         }
+        return scheduleList;
     }
 
-    // setter method
     public void setScheduleList(List<Schedule> scheduleList) {
         this.scheduleList = scheduleList;
     }
