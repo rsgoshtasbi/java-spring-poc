@@ -1,4 +1,4 @@
-package hello;
+package test;
 
 public class Greeting {
 
@@ -8,6 +8,11 @@ public class Greeting {
     public Greeting(long id, String content) {
         this.id = id;
         this.content = content;
+    }
+
+    public Greeting() {
+        this.id = 0;
+        this.content = "Error";
     }
 
     public long getId() {
