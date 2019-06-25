@@ -6,43 +6,60 @@ public class Schedule {
 
     }
 
-    public Schedule(Integer id, String firstName, String lastName, String email) {
+    public Schedule(Integer userId, String date, Integer hour, Integer minute, String event, Long timestamp) {
         super();
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
+        this.userId = userId;
+        this.date = date;
+        this.hour = hour;
+        this.minute = minute;
+        this.event = event;
+        this.timestamp = timestamp;
     }
 
-    private Integer id;
-    private String firstName;
-    private String lastName;
-    private String email;
+    private Integer userId;
+    private String date;
+    private Integer hour;
+    private Integer minute;
+    private String event;
+    private Long timestamp;
 
     //Getters and setters
 
     @Override
     public String toString() {
-        return "Schedule [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
+        return "Schedule [id=" + userId + ", date=" + date + ", hour=" + hour +
+                ", minute=" + minute + ", event=" + event + ", timestamp=" + timestamp + "]";
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUserId(Integer id) {
+        this.userId = id;
     }
 
-    public Integer getId() {
-        return id;
+    public void setTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getDate() {
+        return date;
     }
 
-    public String getEmail() {
-        return email;
+    public Integer getHour() {
+        return hour;
+    }
+
+    public Integer getMinute() {
+        return minute;
+    }
+
+    public String getEvent() {
+        return event;
+    }
+
+    public Long getTimestamp() {
+        return timestamp;
     }
 }
