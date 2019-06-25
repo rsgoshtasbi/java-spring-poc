@@ -1,13 +1,17 @@
 package hello;
 
 import java.net.URI;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
+import hello.remote.SpringJDBCConfig;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.websocket.server.PathParam;
 
 @RestController
 @RequestMapping(path = "schedule")
@@ -15,6 +19,10 @@ public class ScheduleController
 {
     @Autowired
     private ScheduleDAO scheduleDAO;
+
+//    ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+//
+//    SpringJDBCConfig studentJDBCTemplate = (SpringJDBCConfig)context.getBean("SpringJDBCConfig");
 
     @GetMapping(produces = "application/json")
     public Schedules getEmployees() {
@@ -28,6 +36,11 @@ public class ScheduleController
 
     @PostMapping(consumes = "application/json", produces = "application/json")
     public ResponseEntity<Object> addEmployee(@RequestBody Schedule schedule) {
+//        System.out.println("------Records Creation--------" );
+//        studentJDBCTemplate.create("Zara", 11);
+//        studentJDBCTemplate.create("Nuha", 2);
+//        studentJDBCTemplate.create("Ayan", 15);
+
         Integer id = scheduleDAO.getAllSchedules().getScheduleList().size() + 1;
 
         scheduleDAO.addEmployee(schedule);
